@@ -10,10 +10,10 @@ public class TestingMain {
 
     public static void main(String[] args) {
 
-        List<Integer> myList = new ArrayList<>();
-        OddNumbersExterminator oddExterminator = new OddNumbersExterminator();
+        String s = "cos tam";
 
-        System.out.println(oddExterminator.exterminate(myList));
+        System.out.println(s.getClass());
+        System.out.println(String.class);
     }
 }
 
