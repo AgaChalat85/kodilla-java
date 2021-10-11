@@ -49,9 +49,9 @@ public class CollectionTestSuite {
       //Given
         List<Integer> normalList = Arrays.asList(1,2,3,4,5,6,7,8,9,10,11,12);
         OddNumbersExterminator oddExterminator = new OddNumbersExterminator();
+        List<Integer> expectedList = Arrays.asList(2,4,6,8,10,12);
         //When
         List<Integer>  evenNumbers = oddExterminator.exterminate(normalList);
-        List<Integer> expectedList = Arrays.asList(2,4,6,8,10,12);
         //Then
         Assertions.assertEquals(expectedList, evenNumbers);
     }
