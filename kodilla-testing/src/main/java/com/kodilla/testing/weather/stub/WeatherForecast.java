@@ -36,7 +36,7 @@ public class WeatherForecast {
         Collections.sort(values);
         double median;
         if (temperatures.getTemperatures().size() % 2 == 0) {
-            return median = (values.get(values.size() / 2) + values.get((values.size()/ 2) - 1))/2;
+            return median = ((double) values.get(values.size() / 2) + (double)values.get((values.size()/ 2) - 1))/2;
         }
         else {
             return median = values.get(values.size()/2);
