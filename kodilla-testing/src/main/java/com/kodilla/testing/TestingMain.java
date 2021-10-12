@@ -10,10 +10,7 @@ public class TestingMain {
 
     public static void main(String[] args) {
 
-        String s = "cos tam";
 
-        System.out.println(s.getClass());
-        System.out.println(String.class);
     }
 }
 
