@@ -3,6 +3,7 @@ package com.kodilla.stream;
 import com.kodilla.stream.beautifier.PoemBeautifier;
 import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.lambda.*;
+import com.kodilla.stream.person.People;
 import com.kodilla.stream.reference.FunctionalCalculator;
 
 import java.util.Locale;
@@ -13,7 +14,7 @@ public class StreamMain {
     public static void main(String[] args) {
         System.out.println("Welcome to module 7 - Stream");
 
-        System.out.println("Calculating expressions with lambdas");
+        /*System.out.println("Calculating expressions with lambdas");
         ExpressionExecutor expressionExecutor = new ExpressionExecutor();
         expressionExecutor.executeExpression(10,5, (a,b)-> a + b);
         expressionExecutor.executeExpression(10,5, (a,b)-> a - b);
@@ -35,7 +36,11 @@ public class StreamMain {
         poemBeautifier.beautify( "autumn Days are here again", t-> t.replaceAll("a", "A"));
 
         System.out.println("Using Stream to generate even numbers from 1 to 20");
-        NumbersGenerator.generateEven(20);
+        NumbersGenerator.generateEven(20);*/
+
+        People.getList().stream()
+                .filter(s-> s.length() > 11)
+                .forEach(System.out :: println);
 
     }
 }
