@@ -2,43 +2,43 @@ package com.kodilla.testing.forum.statistics;
 
 public class ForumStatistics {
 
-    private int numberOfusers;
+    private int numberOfUsers;
     private int numberOfPosts;;
     private int numberOfComments;
-    private double AvgNoOfPostsPerUser;
-    private double AvgNoOfCommentsPerUser;
-    private double AvgNoOfCommentsPerPost;
+    private double avgNoOfPostsPerUser;
+    private double avgNoOfCommentsPerUser;
+    private double avgNoOfCommentsPerPost;
 
     public void calculateAdvStatistics(Statistics statistics) {
-        this.numberOfusers = statistics.usersNames().size();
+        this.numberOfUsers = statistics.usersNames().size();
         this.numberOfPosts = statistics.postsCount();
         this.numberOfComments = statistics.commentsCount();
             if(statistics.usersNames().size() == 0) {
-              this.AvgNoOfPostsPerUser = 0;
-              this.AvgNoOfCommentsPerUser = 0;
+              this.avgNoOfPostsPerUser = 0.0;
+              this.avgNoOfCommentsPerUser = 0.0;
             } else {
-              this.AvgNoOfPostsPerUser = statistics.postsCount() / (double) statistics.usersNames().size();
-              this.AvgNoOfCommentsPerUser = statistics.commentsCount() / (double)statistics.usersNames().size();
+              this.avgNoOfPostsPerUser = statistics.postsCount() / (double) statistics.usersNames().size();
+              this.avgNoOfCommentsPerUser = statistics.commentsCount() / (double)statistics.usersNames().size();
             }
             if(statistics.postsCount() == 0) {
-                this.AvgNoOfCommentsPerPost = 0;
+                this.avgNoOfCommentsPerPost = 0.0;
             } else {
-                this.AvgNoOfCommentsPerPost = statistics.commentsCount() / (double) statistics.postsCount();
+                this.avgNoOfCommentsPerPost = statistics.commentsCount() / (double) statistics.postsCount();
             }
     }
 
     public void showStatistics() {
         System.out.println("----------- Forum Statistics -------------");
-        System.out.println("Number of users: " + this.numberOfusers);
+        System.out.println("Number of users: " + this.numberOfUsers);
         System.out.println("Number of posts: " + this.numberOfPosts);
         System.out.println("Number of comments: " + this.numberOfComments);
-        System.out.println("Average number of posts per user: " + this.AvgNoOfPostsPerUser);
-        System.out.println("Average number of comments per user: " + this.AvgNoOfCommentsPerUser);
-        System.out.println("Average number of comments per post: " + this.AvgNoOfCommentsPerPost);
+        System.out.println("Average number of posts per user: " + this.avgNoOfPostsPerUser);
+        System.out.println("Average number of comments per user: " + this.avgNoOfCommentsPerUser);
+        System.out.println("Average number of comments per post: " + this.avgNoOfCommentsPerPost);
     }
 
-    public int getNumberOfusers() {
-        return numberOfusers;
+    public int getNumberOfUsers() {
+        return numberOfUsers;
     }
 
     public int getNumberOfPosts() {
@@ -50,14 +50,14 @@ public class ForumStatistics {
     }
 
     public double getAvgNoOfPostsPerUser() {
-        return AvgNoOfPostsPerUser;
+        return avgNoOfPostsPerUser;
     }
 
     public double getAvgNoOfCommentsPerUser() {
-        return AvgNoOfCommentsPerUser;
+        return avgNoOfCommentsPerUser;
     }
 
     public double getAvgNoOfCommentsPerPost() {
-        return AvgNoOfCommentsPerPost;
+        return avgNoOfCommentsPerPost;
     }
 }

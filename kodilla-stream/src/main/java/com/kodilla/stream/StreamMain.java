@@ -1,46 +1,27 @@
 package com.kodilla.stream;
 
-import com.kodilla.stream.beautifier.PoemBeautifier;
-import com.kodilla.stream.iterate.NumbersGenerator;
-import com.kodilla.stream.lambda.*;
-import com.kodilla.stream.person.People;
-import com.kodilla.stream.reference.FunctionalCalculator;
-
-import java.util.Locale;
-import java.util.StringJoiner;
+import com.kodilla.stream.forumuser.Forum;
+import com.kodilla.stream.forumuser.ForumUser;
+import java.time.LocalDate;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class StreamMain {
 
     public static void main(String[] args) {
         System.out.println("Welcome to module 7 - Stream");
 
-        /*System.out.println("Calculating expressions with lambdas");
-        ExpressionExecutor expressionExecutor = new ExpressionExecutor();
-        expressionExecutor.executeExpression(10,5, (a,b)-> a + b);
-        expressionExecutor.executeExpression(10,5, (a,b)-> a - b);
-        expressionExecutor.executeExpression(10,5, (a,b)-> a * b);
-        expressionExecutor.executeExpression(10,5, (a,b)-> a / b);
+        Forum forum = new Forum();
+        Map <Integer, ForumUser> theResultMapOfForumUser = forum.getList().stream()
+                       .filter(forumUser -> forumUser.getSex() == 'M')
+                       .filter(forumUser -> forumUser.getDateOfBirth().isBefore(LocalDate.now().minusYears(20).plusDays(1)))
+                       .filter(forumUser -> forumUser.getNumbersOfPosts() >= 1)
+                       .collect(Collectors.toMap(ForumUser::getUserID,forumUser -> forumUser));
 
-        System.out.println("Calculating expressions with method references");
-        expressionExecutor.executeExpression(3, 4, FunctionalCalculator::multiplyAByB);
-        expressionExecutor.executeExpression(3, 4, FunctionalCalculator::addAToB);
-        expressionExecutor.executeExpression(3, 4, FunctionalCalculator::subBFromA);
-        expressionExecutor.executeExpression(3, 4, FunctionalCalculator::divideAByB);
-
-        System.out.println("Poem Beautifier");
-
-        PoemBeautifier poemBeautifier = new PoemBeautifier();
-        poemBeautifier.beautify("Wednesday", t-> t.toUpperCase());
-        poemBeautifier.beautify("Leaves are falling Autumn is calling.", t-> t.replace(" ", "***"));
-        poemBeautifier.beautify("Wednesday", t-> "ABC " + t + " ABC");
-        poemBeautifier.beautify( "autumn Days are here again", t-> t.replaceAll("a", "A"));
-
-        System.out.println("Using Stream to generate even numbers from 1 to 20");
-        NumbersGenerator.generateEven(20);*/
-
-        People.getList().stream()
-                .filter(s-> s.length() > 11)
-                .forEach(System.out :: println);
-
+        theResultMapOfForumUser.entrySet().stream()
+                       .map(entry -> entry.getKey() + ": " + entry.getValue())
+                       .forEach(System.out::println);
     }
+
 }
+

@@ -48,7 +48,7 @@ public class ForumStatisticsTestSuite {
         //Then
         assertEquals(0,forumStatistics.getNumberOfPosts());
         assertEquals(0.0, forumStatistics.getAvgNoOfPostsPerUser());
-        assertEquals(5, forumStatistics.getAvgNoOfCommentsPerUser());
+        assertEquals(5.0, forumStatistics.getAvgNoOfCommentsPerUser());
         assertEquals(0.0, forumStatistics.getAvgNoOfCommentsPerPost());
     }
 
@@ -60,8 +60,8 @@ public class ForumStatisticsTestSuite {
         forumStatistics.calculateAdvStatistics(statisticsMock);
         //Then
         assertEquals(1000,forumStatistics.getNumberOfPosts());
-        assertEquals(2, forumStatistics.getAvgNoOfPostsPerUser());
-        assertEquals(5, forumStatistics.getAvgNoOfCommentsPerUser());
+        assertEquals(2.0, forumStatistics.getAvgNoOfPostsPerUser());
+        assertEquals(5.0, forumStatistics.getAvgNoOfCommentsPerUser());
         assertEquals(2.5, forumStatistics.getAvgNoOfCommentsPerPost());
     }
 
@@ -73,9 +73,9 @@ public class ForumStatisticsTestSuite {
         forumStatistics.calculateAdvStatistics(statisticsMock);
         //Then
         assertEquals(0,forumStatistics.getNumberOfComments());
-        assertEquals(3, forumStatistics.getAvgNoOfPostsPerUser());
-        assertEquals(0, forumStatistics.getAvgNoOfCommentsPerUser());
-        assertEquals(0, forumStatistics.getAvgNoOfCommentsPerPost());
+        assertEquals(3.0, forumStatistics.getAvgNoOfPostsPerUser());
+        assertEquals(0.0, forumStatistics.getAvgNoOfCommentsPerUser());
+        assertEquals(0.0, forumStatistics.getAvgNoOfCommentsPerPost());
     }
 
     @Test
@@ -85,9 +85,9 @@ public class ForumStatisticsTestSuite {
         //When
         forumStatistics.calculateAdvStatistics(statisticsMock);
         //Then
-        assertEquals(3, forumStatistics.getAvgNoOfPostsPerUser());
-        assertEquals(2, forumStatistics.getAvgNoOfCommentsPerUser());
-        assertEquals(0.66, forumStatistics.getAvgNoOfCommentsPerPost(), 0.01);
+        assertEquals(3.0, forumStatistics.getAvgNoOfPostsPerUser());
+        assertEquals(2.0, forumStatistics.getAvgNoOfCommentsPerUser());
+        assertEquals(0.7, forumStatistics.getAvgNoOfCommentsPerPost(), 0.1);
     }
 
     @Test
@@ -97,9 +97,9 @@ public class ForumStatisticsTestSuite {
         //When
         forumStatistics.calculateAdvStatistics(statisticsMock);
         //Then
-        assertEquals(3, forumStatistics.getAvgNoOfPostsPerUser());
-        assertEquals(9, forumStatistics.getAvgNoOfCommentsPerUser());
-        assertEquals(3, forumStatistics.getAvgNoOfCommentsPerPost());
+        assertEquals(3.0, forumStatistics.getAvgNoOfPostsPerUser());
+        assertEquals(9.0, forumStatistics.getAvgNoOfCommentsPerUser());
+        assertEquals(3.0, forumStatistics.getAvgNoOfCommentsPerPost());
     }
 
     @Test
@@ -109,10 +109,10 @@ public class ForumStatisticsTestSuite {
         //When
         forumStatistics.calculateAdvStatistics(statisticsMock);
         //Then
-        assertEquals(0, forumStatistics.getNumberOfusers());
-        assertEquals(0, forumStatistics.getAvgNoOfPostsPerUser());
-        assertEquals(0, forumStatistics.getAvgNoOfCommentsPerUser());
-        assertEquals(1.66, forumStatistics.getAvgNoOfCommentsPerPost(), 0.01);
+        assertEquals(0, forumStatistics.getNumberOfUsers());
+        assertEquals(0.0, forumStatistics.getAvgNoOfPostsPerUser());
+        assertEquals(0.0, forumStatistics.getAvgNoOfCommentsPerUser());
+        assertEquals(1.7, forumStatistics.getAvgNoOfCommentsPerPost(), 0.1);
     }
 
     @Test
@@ -122,10 +122,10 @@ public class ForumStatisticsTestSuite {
         //When
         forumStatistics.calculateAdvStatistics(statisticsMock);
         //Then
-        assertEquals(100, forumStatistics.getNumberOfusers());
-        assertEquals(15, forumStatistics.getAvgNoOfPostsPerUser());
-        assertEquals(25, forumStatistics.getAvgNoOfCommentsPerUser());
-        assertEquals(1.66, forumStatistics.getAvgNoOfCommentsPerPost(), 0.01);
+        assertEquals(100, forumStatistics.getNumberOfUsers());
+        assertEquals(15.0, forumStatistics.getAvgNoOfPostsPerUser());
+        assertEquals(25.0, forumStatistics.getAvgNoOfCommentsPerUser());
+        assertEquals(1.7, forumStatistics.getAvgNoOfCommentsPerPost(), 0.1);
     }
 }
 
