@@ -16,6 +16,7 @@ public final class Forum {
         userList.add(new ForumUser(1235, "Marcin", 'M', LocalDate.of(2001,10,15), 42 ));
         userList.add(new ForumUser(1234, "Pawel", 'M', LocalDate.of(2001,10,16), 3 ));
         userList.add(new ForumUser(1233, "Jan", 'M', LocalDate.of(1996,11,23), 0 ));
+        userList.add(new ForumUser(1232, "Jan", 'M', LocalDate.of(1996,11,23), 1 ));
 
     }
 
