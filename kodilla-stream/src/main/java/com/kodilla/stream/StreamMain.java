@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 public class StreamMain {
 
     public static void main(String[] args) {
+        System.out.println("Stream");
 
         Forum forum = new Forum();
         Map <Integer, ForumUser> theResultMapOfForumUser = forum.getList().stream()
