@@ -1,6 +1,6 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.challenges.orderservice;
 
-import java.time.LocalDate;
+import com.kodilla.good.patterns.challenges.orderservice.OrderRequest;
 
 public interface OrderService {
 

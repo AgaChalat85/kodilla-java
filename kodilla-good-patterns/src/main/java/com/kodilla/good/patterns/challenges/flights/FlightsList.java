@@ -1,20 +1,27 @@
 package com.kodilla.good.patterns.challenges.flights;
 
-public class FlightList {
+import java.util.ArrayList;
+import java.util.List;
 
-    final List<String> theList = new ArrayList<>();    // [6]
+public class FlightsList {
 
-      theList.add("John Smith");                         // [7]
-      theList.add("Dorothy Newman");                     // [8]
-      theList.add("John Wolkowitz");                     // [9]
-      theList.add("Lucy Riley");                         // [10]
-      theList.add("Owen Rogers");                        // [11]
-      theList.add("Matilda Davies");                     // [12]
-      theList.add("Declan Booth");                       // [13]
-      theList.add("Corinne Foster");                     // [14]
-      theList.add("Khloe fry");                          // [15]
-      theList.add("Martin Valenzuela");                  // [16]
+    public static List<Flight> getList() {
+        final List<Flight> theList = new ArrayList<>();
 
-      return new ArrayList<>(theList);                   // [17]
-}
+        theList.add(new Flight("Warszawa", "Gdańsk"));
+        theList.add(new Flight("Gdańsk", "Warszawa"));
+        theList.add(new Flight("Warszawa", "Wrocław"));
+        theList.add(new Flight("Katowice", "Gdańsk"));
+        theList.add(new Flight("Gdańsk", "Kraków"));
+        theList.add(new Flight("Rzeszów", "Gdańsk"));
+        theList.add(new Flight("Gdańsk", "Rzeszów"));
+        theList.add(new Flight("Warszawa", "Szczecin"));
+        theList.add(new Flight("Kraków", "Gdańsk"));
+        theList.add(new Flight("Warszawa", "Gdańsk"));
+        theList.add(new Flight("Warszawa", "Gdańsk"));
+        theList.add(new Flight("Warszawa", "Gdańsk"));
+        theList.add(new Flight("Warszawa", "Gdańsk"));
+
+        return new ArrayList<>(theList);
+    }
 }

@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.challenges.orderservice;
 
 import java.time.LocalDate;
 import java.util.HashMap;
@@ -9,7 +9,7 @@ public class OrderRequest {
     private long orderNumber;
     private Customer customer;
     private LocalDate orderDate;
-    private Map<Product, Integer>  orderList = new HashMap<>();
+    private Map<Product, Integer>  orderList;
 
 
     public OrderRequest(long orderNumber, Customer customer, LocalDate orderDate, Map<Product, Integer> orderList) {

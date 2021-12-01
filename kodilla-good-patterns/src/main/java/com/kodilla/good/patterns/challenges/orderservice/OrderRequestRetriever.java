@@ -1,4 +1,8 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.challenges.orderservice;
+
+import com.kodilla.good.patterns.challenges.orderservice.Customer;
+import com.kodilla.good.patterns.challenges.orderservice.OrderRequest;
+import com.kodilla.good.patterns.challenges.orderservice.Product;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -13,9 +17,9 @@ public class OrderRequestRetriever {
         Map<Product,Integer> ordersList = new HashMap<>();
         ordersList.put(new Product("buty","b17882", BigDecimal.valueOf(63.99)), 1);
         ordersList.put(new Product("puzzle","p6782", BigDecimal.valueOf(14.50)), 2);
-        ordersList.put(new Product("mlotek","m680882", BigDecimal.valueOf(5.0)), 10);
+        ordersList.put(new Product("młotek","m680882", BigDecimal.valueOf(5.0)), 3);
 
-        return new OrderRequest(23L, customer, orderDate,ordersList);
+        return new OrderRequest(2345663223L, customer, orderDate,ordersList);
     }
 }
 

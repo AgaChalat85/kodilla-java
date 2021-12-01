@@ -1,6 +1,6 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.challenges.orderservice;
 
-public class OrderRepositoryImpl implements OrderRepository{
+public class OrderRepositoryImpl implements OrderRepository {
 
     @Override
     public boolean createOrder(OrderRequest orderRequest) {
