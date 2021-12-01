@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public interface OrderService {
 
-    boolean order(Customer customer, LocalDate orderDate);
+    boolean order(OrderRequest orderRequest);
 
 
 }

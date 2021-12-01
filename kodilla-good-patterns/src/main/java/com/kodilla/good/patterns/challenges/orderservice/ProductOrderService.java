@@ -13,13 +13,13 @@ public class ProductOrderService {
     }
 
     public OrderDto process(OrderRequest orderRequest) {
-        boolean isOrdered = orderService.order(orderRequest.getUser(), orderRequest.getOrderDate());
+        boolean isOrdered = orderService.order(orderRequest);
         if (isOrdered) {
-            informationService.inform(orderRequest.getUser());
-            orderRepository.createOrder(orderRequest.getUser(), orderRequest.getOrderDate());
-            return new OrderDto(orderRequest.getUser(), true);
+            informationService.inform(orderRequest.getCustomer());
+            orderRepository.createOrder(orderRequest);
+            return new OrderDto(orderRequest.getCustomer(), true);
         } else {
-            return new OrderDto(orderRequest.getUser(), false);
+            return new OrderDto(orderRequest.getCustomer(), false);
         }
 
     }
