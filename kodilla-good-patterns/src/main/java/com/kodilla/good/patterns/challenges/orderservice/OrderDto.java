@@ -1,7 +1,5 @@
 package com.kodilla.good.patterns.challenges.orderservice;
 
-import com.kodilla.good.patterns.challenges.orderservice.Customer;
-
 public class OrderDto {
 
     public Customer customer;

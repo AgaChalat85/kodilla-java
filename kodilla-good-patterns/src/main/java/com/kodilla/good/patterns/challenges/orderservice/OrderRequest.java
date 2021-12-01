@@ -1,7 +1,6 @@
 package com.kodilla.good.patterns.challenges.orderservice;
 
 import java.time.LocalDate;
-import java.util.HashMap;
 import java.util.Map;
 
 public class OrderRequest {

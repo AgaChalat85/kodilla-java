@@ -1,9 +1,5 @@
 package com.kodilla.good.patterns.challenges.orderservice;
 
-import com.kodilla.good.patterns.challenges.orderservice.Customer;
-import com.kodilla.good.patterns.challenges.orderservice.OrderRequest;
-import com.kodilla.good.patterns.challenges.orderservice.Product;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.HashMap;
