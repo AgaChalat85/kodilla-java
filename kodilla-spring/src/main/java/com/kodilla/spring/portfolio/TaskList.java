@@ -6,10 +6,8 @@ import java.util.List;
 public class TaskList {
 
     private List<String> tasks;
-    private String name;
 
-    public TaskList(String name) {
-        this.name = name;
+    public TaskList() {
         this.tasks = new ArrayList<>();
     }
 
@@ -26,7 +24,6 @@ public class TaskList {
     public String toString() {
         return "TaskList{" +
                 "tasks=" + tasks +
-                ", name='" + name + '\'' +
                 '}';
     }
 }
