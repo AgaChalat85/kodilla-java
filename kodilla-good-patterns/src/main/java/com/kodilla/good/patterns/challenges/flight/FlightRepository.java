@@ -15,6 +15,7 @@ public class FlightRepository {
         flights.add(new Flight(56789, "Warszawa", "Kraków"));
         flights.add(new Flight(78542, "Rzeszów", "Berlin", Set.of("Warszawa", "Poznań")));
         flights.add(new Flight(27424, "Katowice", "Oslo", Set.of("Szczecin")));
+        flights.add(new Flight(27424, "Gdańsk", "Wrocław", Set.of("Kraków")));
         flights.add(new Flight(57639, "Warszawa", "Paryż", Set.of("Berlin", "Frankfurt nad Menem")));
 
     }

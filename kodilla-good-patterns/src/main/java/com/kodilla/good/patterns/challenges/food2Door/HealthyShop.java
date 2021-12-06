@@ -1,14 +1,16 @@
 package com.kodilla.good.patterns.challenges.food2Door;
 
-public class HealthyShop extends Shop{
+public class HealthyShop implements FoodManufacturer{
 
-    public HealthyShop(String name) {
-        super(name);
+
+    @Override
+    public String getName() {
+        return "HealthyShop";
     }
 
     @Override
-    public void process(OrderRequest orderRequest) {
-        System.out.println("Zamowienie w sklepie " + getName() + "zostalo przyjete do realizacji");
-
+    public boolean process(OrderRequest orderRequest) {
+        System.out.println("Zamowienie w sklepie " + getName() + "zostalo przyjete do realizacji\nTwoje produkty zostaną dostarczone w ciągu 48 godzin");
+        return true;
     }
 }

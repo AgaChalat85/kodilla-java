@@ -6,7 +6,7 @@ import java.util.Map;
 public abstract class Shop {
 
     private String name;
-    private Map<Product, Integer> products = new HashMap<>();
+    private Map<String, Integer> products = new HashMap<>();
 
     public Shop(String name) {
         this.name = name;
@@ -16,11 +16,11 @@ public abstract class Shop {
         return name;
     }
 
-    public Map<Product, Integer> getProducts() {
+    public Map<String, Integer> getProducts() {
         return products;
     }
 
-    public void addProduct(Product product, Integer amount) {
+    public void addProduct(String product, Integer amount) {
         this.products.put(product, amount);
     }
 
