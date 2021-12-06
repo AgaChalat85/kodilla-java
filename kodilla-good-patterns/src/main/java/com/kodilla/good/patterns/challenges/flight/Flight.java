@@ -35,9 +35,6 @@ public class Flight {
         return transitAirportSet;
     }
 
-    public int getFlightNumber() {
-        return flightNumber;
-    }
 
     @Override
     public boolean equals(Object o) {

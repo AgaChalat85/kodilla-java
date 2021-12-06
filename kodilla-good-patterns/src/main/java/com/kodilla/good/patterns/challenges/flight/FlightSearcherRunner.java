@@ -8,6 +8,7 @@ public class FlightSearcherRunner {
         flightSearcher.findFlightFrom("Rzeszów");
         flightSearcher.findFlightTo("Krakow");
         flightSearcher.findFlightVia("Warszawa");
+        flightSearcher.findFlightTo("Londyn");
 
     }
 }
