@@ -6,13 +6,12 @@ public class OrderRequest {
 
     private long orderNumber;
     private Map<String, Integer>  orderList;
-    private FoodManufacturer foodManufacturer;
+    private Shop shop;
 
-
-    public OrderRequest(long orderNumber, Map<String, Integer> orderList, FoodManufacturer foodManufacturer) {
+    public OrderRequest(long orderNumber, Map<String, Integer> orderList, Shop shop) {
         this.orderNumber = orderNumber;
         this.orderList = orderList;
-        this.foodManufacturer = foodManufacturer;
+        this.shop = shop;
     }
 
     public long getOrderNumber() {
@@ -23,8 +22,8 @@ public class OrderRequest {
         return orderList;
     }
 
-    public FoodManufacturer getFoodManufacturer() {
-        return foodManufacturer;
+    public Shop getShop() {
+        return shop;
     }
 
     @Override
@@ -35,15 +34,13 @@ public class OrderRequest {
         OrderRequest that = (OrderRequest) o;
 
         if (orderNumber != that.orderNumber) return false;
-        if (orderList != null ? !orderList.equals(that.orderList) : that.orderList != null) return false;
-        return foodManufacturer != null ? foodManufacturer.equals(that.foodManufacturer) : that.foodManufacturer == null;
+        return orderList != null ? orderList.equals(that.orderList) : that.orderList == null;
     }
 
     @Override
     public int hashCode() {
         int result = (int) (orderNumber ^ (orderNumber >>> 32));
         result = 31 * result + (orderList != null ? orderList.hashCode() : 0);
-        result = 31 * result + (foodManufacturer != null ? foodManufacturer.hashCode() : 0);
         return result;
     }
 
@@ -52,7 +49,7 @@ public class OrderRequest {
         return "OrderRequest{" +
                 "orderNumber=" + orderNumber +
                 ", orderList=" + orderList +
-                ", foodManufacturer=" + foodManufacturer +
+                ", shop=" + shop +
                 '}';
     }
 }
