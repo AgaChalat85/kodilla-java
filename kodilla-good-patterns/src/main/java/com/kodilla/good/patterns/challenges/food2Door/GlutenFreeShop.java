@@ -2,7 +2,6 @@ package com.kodilla.good.patterns.challenges.food2Door;
 
 public class GlutenFreeShop extends Shop {
 
-
     public GlutenFreeShop() {
         super("GlutenFreeShop");
 

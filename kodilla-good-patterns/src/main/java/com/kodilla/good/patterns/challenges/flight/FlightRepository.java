@@ -10,13 +10,16 @@ public class FlightRepository {
     static {
         flights = new HashSet<>();
         flights.add(new Flight(23424, "Kraków", "Warszawa"));
-        flights.add(new Flight(45342, "Rzeszów", "Gdańsk", Set.of("Warszawa")));
+        flights.add(new Flight(45342, "Rzeszów", "Gdańsk"));
         flights.add(new Flight(24678, "Kraków", "Katowice"));
         flights.add(new Flight(56789, "Warszawa", "Kraków"));
-        flights.add(new Flight(78542, "Rzeszów", "Berlin", Set.of("Warszawa", "Poznań")));
-        flights.add(new Flight(27424, "Katowice", "Oslo", Set.of("Szczecin")));
-        flights.add(new Flight(27424, "Gdańsk", "Wrocław", Set.of("Kraków")));
-        flights.add(new Flight(57639, "Warszawa", "Paryż", Set.of("Berlin", "Frankfurt nad Menem")));
+        flights.add(new Flight(78542, "Rzeszów", "Berlin"));
+        flights.add(new Flight(27424, "Katowice", "Oslo"));
+        flights.add(new Flight(27424, "Gdańsk", "Kraków"));
+        flights.add(new Flight(57639, "Warszawa", "Paryż"));
+        flights.add(new Flight(57639, "Kraków", "Wrocław"));
+        flights.add(new Flight(57639, "Gdańsk", "Warszawa"));
+        flights.add(new Flight(57639, "Warszawa", "Wrocław"));
 
     }
 
