@@ -7,8 +7,8 @@ import java.util.Set;
 
 public class Library extends Prototype <Library> {
 
-    String name;
-    final Set<Book> books = new HashSet<>();
+    private String name;
+    private Set<Book> books = new HashSet<>();
 
     public Library(final String name) {
         this.name = name;
@@ -37,4 +37,14 @@ public class Library extends Prototype <Library> {
     public Library shallowCopy() throws CloneNotSupportedException {
         return super.clone();
     }
+
+    public Library deepCopy() throws CloneNotSupportedException {
+        Library clonedLibrary = super.clone();
+        clonedLibrary.books = new HashSet<>();
+        for (Book book : books) {
+            clonedLibrary.getBooks().add(book);
+        }
+        return clonedLibrary;
+    }
 }
+
