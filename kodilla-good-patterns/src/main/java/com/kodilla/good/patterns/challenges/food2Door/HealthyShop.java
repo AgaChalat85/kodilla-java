@@ -2,14 +2,16 @@ package com.kodilla.good.patterns.challenges.food2Door;
 
 public class HealthyShop extends Shop {
 
-    public HealthyShop() {
-        super("HealthyShop");
+    public static final String SUPPLIER_NAME = "Healthy Shop";
 
+    public HealthyShop() {
+        super(SUPPLIER_NAME);
     }
 
     @Override
-    public boolean process(OrderRequest orderRequest) {
-        System.out.println("Dostawca: " + getCompanyName() + "\nZamówienie jest w trakcie realizacji");
-        return true;
+    public boolean process(Product product, Integer quantity) {
+        System.out.println("Nope. We don't have this stuff.");
+
+        return false;
     }
 }

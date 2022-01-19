@@ -1,29 +1,39 @@
 package com.kodilla.good.patterns.challenges.food2Door;
 
-import java.util.Map;
-
 public class OrderRequest {
 
-    private long orderNumber;
-    private Map<String, Integer>  orderList;
-    private Shop shop;
+    private String shopName;
+    private Product product;
+    private Integer productQuantity;
 
-    public OrderRequest(long orderNumber, Map<String, Integer> orderList, Shop shop) {
-        this.orderNumber = orderNumber;
-        this.orderList = orderList;
-        this.shop = shop;
+    public OrderRequest(String shopName, Product product, Integer productQuantity) {
+        this.shopName = shopName;
+        this.product = product;
+        this.productQuantity = productQuantity;
     }
 
-    public long getOrderNumber() {
-        return orderNumber;
+    public String getShopName() {
+        return shopName;
     }
 
-    public Map<String, Integer> getOrderList() {
-        return orderList;
+    public void setShopName(String shopName) {
+        this.shopName = shopName;
     }
 
-    public Shop getShop() {
-        return shop;
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public Integer getProductQuantity() {
+        return productQuantity;
+    }
+
+    public void setProductQuantity(Integer productQuantity) {
+        this.productQuantity = productQuantity;
     }
 
     @Override
@@ -33,23 +43,25 @@ public class OrderRequest {
 
         OrderRequest that = (OrderRequest) o;
 
-        if (orderNumber != that.orderNumber) return false;
-        return orderList != null ? orderList.equals(that.orderList) : that.orderList == null;
+        if (shopName != null ? !shopName.equals(that.shopName) : that.shopName != null) return false;
+        if (product != null ? !product.equals(that.product) : that.product != null) return false;
+        return productQuantity != null ? productQuantity.equals(that.productQuantity) : that.productQuantity == null;
     }
 
     @Override
     public int hashCode() {
-        int result = (int) (orderNumber ^ (orderNumber >>> 32));
-        result = 31 * result + (orderList != null ? orderList.hashCode() : 0);
+        int result = shopName != null ? shopName.hashCode() : 0;
+        result = 31 * result + (product != null ? product.hashCode() : 0);
+        result = 31 * result + (productQuantity != null ? productQuantity.hashCode() : 0);
         return result;
     }
 
     @Override
     public String toString() {
         return "OrderRequest{" +
-                "orderNumber=" + orderNumber +
-                ", orderList=" + orderList +
-                ", shop=" + shop +
+                "supplierName='" + shopName + '\'' +
+                ", product=" + product +
+                ", productQuantity=" + productQuantity +
                 '}';
     }
 }
