@@ -6,6 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 @SpringBootTest
@@ -13,6 +16,8 @@ public class CompanyDaoTestSuite {
 
     @Autowired
     private CompanyDao companyDao;
+    @Autowired
+    private EmployeeDao employeeDao;
 
     @Test
     void testSaveManyToMany() {
@@ -51,12 +56,47 @@ public class CompanyDaoTestSuite {
         assertNotEquals(0, greyMatterId);
 
         //CleanUp
-        //try {
-        //    companyDao.deleteById(softwareMachineId);
-        //    companyDao.deleteById(dataMaestersId);
-        //    companyDao.deleteById(greyMatterId);
-        //} catch (Exception e) {
-        //    //do nothing
-        //}
+        try {
+            companyDao.deleteById(softwareMachineId);
+           companyDao.deleteById(dataMaestersId);
+           companyDao.deleteById(greyMatterId);
+        } catch (Exception e) {
+           //do nothing
+        }
+    }
+
+    @Test
+    void testNamedQueries() {
+        //Given
+        Employee johnSmith = new Employee("John", "Smith");
+        Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
+
+        Company softwareMachine = new Company("Software Machine");
+        Company dataMaesters = new Company("Data Maesters");
+
+        softwareMachine.getEmployees().add(johnSmith);
+        dataMaesters.getEmployees().add(stephanieClarckson);
+
+        johnSmith.getCompanies().add(softwareMachine);
+        stephanieClarckson.getCompanies().add(dataMaesters);
+
+        companyDao.save(softwareMachine);
+        int softwareMachineId = softwareMachine.getId();
+        companyDao.save(dataMaesters);
+        int dataMaestersId = dataMaesters.getId();
+
+        //When
+        List<Employee> findByLastname = employeeDao.retrieveEmployeesWithLastname("Clarckson");
+        List<Company> findBy3chars = companyDao.retrieveCompaniesByNameFragment("Sof");
+
+        //Then
+        try {
+            assertEquals(1, findByLastname.size());
+            assertEquals(1, findBy3chars.size());
+        } finally {
+            //CleanUp
+            companyDao.deleteById(softwareMachineId);
+            companyDao.deleteById(dataMaestersId);
+        }
     }
 }
