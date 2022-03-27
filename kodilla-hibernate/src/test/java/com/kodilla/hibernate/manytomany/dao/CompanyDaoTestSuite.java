@@ -87,7 +87,7 @@ public class CompanyDaoTestSuite {
 
         //When
         List<Employee> findByLastname = employeeDao.retrieveEmployeesWithLastname("Clarckson");
-        List<Company> findBy3chars = companyDao.retrieveCompaniesByNameFragment("Sof");
+        List<Company> findBy3chars = companyDao.retrieveCompaniesByFirstThreeLetters("Sof");
 
         //Then
         try {
